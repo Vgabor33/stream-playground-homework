@@ -110,7 +110,7 @@ ed by the language code "es").
      * Prints all distinct regions of the countries with null area.
      */
     public void streamPipeline13() {
-        // TODO
+        countries.stream().filter(n -> n.getArea() == null).map(n -> n.getRegion()).distinct().forEach(System.out::println);
     }
 
     /**
