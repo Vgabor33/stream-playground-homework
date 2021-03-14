@@ -36,7 +36,7 @@ public class Homework1 {
      * Prints each country name in which the first and the last letters are the same ignoring case.
      */
     public void streamPipeline3() {
-        // TODO
+        countries.stream().map(Country::getName).filter(n->n.toLowerCase().charAt(0) == n.toLowerCase().charAt(n.length()-1)).forEach(System.out::println);
     }
 
     /**
