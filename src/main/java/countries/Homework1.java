@@ -102,8 +102,8 @@ ed by the language code "es").
      * Returns the average length of country names.
      */
     public double streamPipeline12() {
-        // TODO
-        return 0;
+        
+        return countries.stream().mapToInt(n -> n.getName().length()).average().getAsDouble();
     }
 
     /**
