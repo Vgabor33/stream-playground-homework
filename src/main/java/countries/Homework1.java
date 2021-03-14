@@ -20,8 +20,8 @@ public class Homework1 {
      * Returns whether there is at least one country with the word "island" in its name ignoring case.
      */
     public boolean streamPipeline1() {
-        // TODO
-        return false;
+        
+        return countries.stream().map(Country::getName).anyMatch(n->n.toLowerCase().contains("island"));
     }
 
     /**
