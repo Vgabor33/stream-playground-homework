@@ -88,7 +88,7 @@ ed by the language code "es").
      * Prints the names of countries with null area.
      */
     public void streamPipeline10() {
-        // TODO
+        countries.stream().filter(n -> n.getArea() == null).map(Country::getName).forEach(System.out::println);
     }
 
     /**
