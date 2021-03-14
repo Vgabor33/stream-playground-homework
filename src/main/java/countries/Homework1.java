@@ -50,7 +50,7 @@ public class Homework1 {
      * Prints the names of the first ten least populous countries.
      */
     public void streamPipeline5() {
-        // TODO
+        countries.stream().sorted(Comparator.comparingLong(Country::getPopulation)).limit(10).map(Country::getName).forEach(n ->System.out.println(n));
     }
 
     /**
