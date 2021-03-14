@@ -125,7 +125,8 @@ ed by the language code "es").
      * Prints the names of countries with a non-null area below 1.
      */
     public void streamPipeline15() {
-        //TODO
+        countries.stream().filter(n -> n.getArea() != null && n.getArea().compareTo(new BigDecimal(1)) == -1).map(Country::getName).forEach(System.out::println);
+
     }
 
     /**
