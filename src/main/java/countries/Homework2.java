@@ -83,9 +83,11 @@ public class Homework2 {
      * Returns the country name with the most number of {@code 'e'} characters ignoring case.
      */
 
-private int charCounter(String s, char c){
+   private int charCounter(String s, char c)
+   {
         int count = 0;
-        for (char item : s.toLowerCase().toCharArray()) {
+        for (char item : s.toLowerCase().toCharArray()) 
+        {
             if (item == c)
                 count++;
         }
@@ -101,9 +103,20 @@ private int charCounter(String s, char c){
     /**
      *  Returns the capital with the most number of English vowels (i.e., {@code 'a'}, {@code 'e'}, {@code 'i'}, {@code 'o'}, {@code 'u'}).
      */
+
+    private int vowelCounter(String s)
+    {
+        return charCounter(s, 'a') +
+                charCounter(s, 'e') +
+                charCounter(s, 'i') +
+                charCounter(s, 'o') +
+                charCounter(s, 'u');
+    }
+
     public Optional<String> streamPipeline8() {
-        // TODO
-        return null;
+        return countries.stream()
+                .map(Country::getCapital)
+                .max(Comparator.comparingInt(n -> vowelCounter(n)));
     }
 
     /**
