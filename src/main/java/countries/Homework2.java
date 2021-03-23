@@ -143,8 +143,9 @@ public class Homework2 {
      * Returns the number of country names by region that starts with their two-letter country code ignoring case.
      */
     public Map<Region, Long> streamPipeline11() {
-        // TODO
-        return null;
+        return countries.stream()
+               .filter(n -> n.getCode().equalsIgnoreCase(n.getName().substring(0,2)))
+               .collect(groupingBy(n -> n.getRegion(), counting()));
     }
 
     /**
