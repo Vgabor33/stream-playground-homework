@@ -64,8 +64,10 @@ public class Homework2 {
      * Returns the country name with the most number of words.
      */
     public Optional<String> streamPipeline5() {
-        // TODO
-        return null;
+        
+        return countries.stream()
+                .max(Comparator.comparingInt(n -> n.getName().split(" ").length))
+                .map(Country::getName);
     }
 
     /**
