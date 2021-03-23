@@ -123,8 +123,10 @@ public class Homework2 {
      * Returns a map that contains for each character the number of occurrences in country names ignoring case.
      */
     public Map<Character, Long> streamPipeline9() {
-        // TODO
-        return null;
+         return countries.stream()
+                .map(Country::getName)
+                .flatMap(n -> n.toLowerCase().chars().mapToObj(c -> (char)c))
+                .collect(groupingBy(n->n, counting()));
     }
 
     /**
