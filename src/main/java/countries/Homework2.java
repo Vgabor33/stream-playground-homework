@@ -152,8 +152,8 @@ public class Homework2 {
      * Returns a map that contains the number of countries whose population is greater or equal than the population average versus the the number of number of countries with population below the average.
      */
     public Map<Boolean, Long> streamPipeline12() {
-        // TODO
-        return null;
+         return countries.stream().
+                collect(groupingBy(n -> n.getPopulation()>=countries.stream().mapToLong(Country::getPopulation).average().getAsDouble(), counting()));
     }
 
     /**
